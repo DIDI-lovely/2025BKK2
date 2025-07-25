@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 BKK 曼谷Chill旅程規劃</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS 變數定義 */
+        :root {
+            --primary: #ff6b35; /* 主要橘色 */
+            --secondary: #2a9d8f; /* 次要綠色 */
+            --accent: #e9c46a; /* 點綴黃色 */
+            --light: #f8f9fa; /* 淺色背景 */
+            --dark: #264653; /* 深色文字 */
+        }
+        
+        /* 基本樣式設定 */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fff9f0 0%, #fff3e6 100%); /* 淺色漸層背景 */
+            color: #333; /* 預設文字顏色 */
+            background-attachment: fixed; /* 背景固定 */
+            background-size: cover; /* 背景覆蓋整個區域 */
+            position: relative;
+        }
+        
+        /* 頁面背景疊加圖案 */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 背景圖，提供 fallback 以防圖片載入失敗 */
+            background: url('https://placehold.co/1920x1080/fff3e6/333?text=BKK+Background') no-repeat center center;
+            background-size: cover;
+            opacity: 0.03; /* 透明度 */
+            z-index: -1; /* 置於底部 */
+        }
+        
+        /* 曼谷主題區塊樣式 */
+        .bangkok-theme {
+            background-color: rgba(255, 255, 255, 0.92); /* 半透明白色背景 */
+            border-radius: 16px; /* 圓角 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* 陰影 */
+            border: 1px solid rgba(234, 179, 8, 0.15); /* 邊框 */
+            transition: all 0.3s ease; /* 平滑過渡效果 */
+        }
+        
+        .bangkok-theme:hover {
+            box-shadow: 0 15px 40px rgba(234, 179, 8, 0.15); /* 懸停時陰影加深 */
+            transform: translateY(-5px); /* 懸停時輕微上移 */
+        }
+        
+        /* 頁首漸層背景 */
+        .header-gradient {
+            /* 調整為更具質感的馬卡龍漸層 */
+            background: linear-gradient(135deg, #FFDAC1 0%, #FFD1DC 100%); /* 淺桃色至淡粉色漸層 */
+            border-radius: 16px 16px 0 0; /* 上方圓角 */
+            max-height: 200px; /* 限制橫幅最大高度 */
+            overflow: hidden; /* 隱藏溢出內容 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        /* 提升標題文字可讀性 */
+        .header-title {
+            text-shadow: 0 3px 6px rgba(0,0,0,0.25); /* 更明顯的文字陰影 */
+            line-height: 1.2; /* 調整行高 */
+        }
+
+        /* 導覽按鈕樣式 */
+        .nav-btn {
+            transition: all 0.3s ease; /* 平滑過渡效果 */
+            border-radius: 12px; /* 圓角 */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 陰影 */
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px); /* 懸停時輕微上移 */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* 懸停時陰影加深 */
+        }
+
+        /* 導覽按鈕啟用狀態 */
+        .nav-btn.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 6px 12px rgba(255, 107, 53, 0.3);
+        }
+        
+        /* 區塊標題樣式 */
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary); /* 底線顏色 */
+            border-radius: 2px; /* 底線圓角 */
+        }
+        
+        /* 浮動按鈕動畫 */
+        .floating-btn {
+            animation: float 3s ease-in-out infinite; /* 浮動動畫 */
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* 日程卡片樣式 */
+        .day-card {
+            transition: all 0.3s ease; /* 平滑過渡效果 */
+            cursor: pointer; /* 鼠標指針 */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .day-card:hover {
+            transform: scale(1.02); /* 懸停時輕微放大 */
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1); /* 懸停時陰影加深 */
+        }
+        
+        /* 亮點文字樣式 */
+        .highlight {
+            position: relative;
+            padding: 3px 6px;
+            z-index: 1;
+        }
+        
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 183, 77, 0.3); /* 亮點背景色 */
+            z-index: -1;
+            transform: skewX(-15deg); /* 斜角效果 */
+            border-radius: 3px;
+        }
+        
+        /* 標籤樣式 */
+        .tag {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 20px; /* 圓角膠囊形狀 */
+            font-size: 0.75rem; /* 小字體 */
+            font-weight: 600; /* 加粗 */
+        }
+        
+        /* 不同類型的標籤顏色 */
+        .food-tag { background: rgba(255, 107, 53, 0.15); color: #d84315; }
+        .culture-tag { background: rgba(42, 157, 143, 0.15); color: #00695c; }
+        .shopping-tag { background: rgba(233, 196, 106, 0.15); color: #8d6e63; }
+        .nature-tag { background: rgba(38, 70, 83, 0.15); color: #264653; }
+        .relax-tag { background: rgba(147, 197, 253, 0.15); color: #2563eb; } /* 新增放鬆標籤 */
+        .art-tag { background: rgba(236, 72, 153, 0.15); color: #be185d; } /* 新增藝術標籤 */
+        .family-tag { background: rgba(144, 238, 144, 0.15); color: #2e8b57; } /* 新增家庭標籤 */
+        
+        /* 資訊卡片（天氣、匯率、緊急聯絡）樣式 */
+        .weather-card, .currency-card, .emergency-card {
+            transition: all 0.3s ease; /* 平滑過渡效果 */
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .weather-card:hover, .currency-card:hover, .emergency-card:hover {
+            transform: translateY(-5px); /* 懸停時輕微上移 */
+            box-shadow: 0 15px 25px rgba(0,0,0,0.1); /* 懸停時陰影加深 */
+        }
+        
+        /* 資訊卡片內容的展開/收合動畫 */
+        .info-card-content {
+            transition: all 0.3s ease-out; /* 平滑過渡效果 */
+            max-height: 0; /* 預設收合 */
+            opacity: 0; /* 預設隱藏 */
+            overflow: hidden; /* 隱藏溢出內容 */
+            padding: 0 15px; /* Adjust padding for collapse */
+        }
+        
+        .info-card.active .info-card-content {
+            max-height: 800px; /* 展開時的最大高度 (increased for dual plans) */
+            opacity: 1; /* 展開時顯示 */
+            padding: 15px; /* 展開時的內邊距 */
+        }
+        
+        /* 展開圖示旋轉效果 */
+        .info-card.active .expand-icon {
+            transform: rotate(180deg); /* 展開時旋轉180度 */
+        }
+        
+        /* 資訊卡片標頭樣式 */
+        .info-card-header {
+            cursor: pointer; /* 鼠標指針 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* 展開圖示過渡效果 */
+        .expand-icon {
+            transition: transform 0.3s ease; /* 平滑過渡效果 */
+        }
+
+        /* 伴手禮和必帶物品列表樣式 */
+        .item-list ul {
+            list-style: none; /* 移除預設列表點 */
+            padding-left: 0;
+        }
+        .item-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            display: flex;
+            align-items: flex-start; /* Align items to top */
+            flex-wrap: wrap; /* Allow wrapping for longer text */
+        }
+        .item-list li:last-child {
+            border-bottom: none;
+        }
+        .item-list li i {
+            margin-right: 10px;
+            color: var(--primary);
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            margin-top: 2px; /* Adjust icon vertical alignment */
+        }
+        .item-list li span.location {
+            font-size: 0.8rem;
+            color: #777;
+            margin-left: 0; /* Remove initial margin-left */
+            flex-basis: 100%; /* Ensure location text wraps to new line */
+            padding-left: 30px; /* Align with item text by padding */
+        }
+
+        /* Itinerary Plan Buttons */
+        .plan-toggle button {
+            transition: all 0.2s ease;
+        }
+        .plan-toggle button.active {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 2px 5px rgba(255, 107, 53, 0.2);
+        }
+        .plan-content {
+            display: none;
+        }
+        .plan-content.active {
+            display: block;
+        }
+
+        /* Daily reminders */
+        .daily-reminders {
+            background-color: #fef9e7; /* Light yellow background */
+            border-left: 4px solid #f39c12; /* Orange left border */
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.875rem;
+            color: #555;
+        }
+        .daily-reminders strong {
+            color: #f39c12;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .daily-reminders ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-6 md:p-8 flex flex-col">
+
+    <!-- 首頁內容 -->
+    <div id="home-page" class="page-content">
+        <!-- Header Section -->
+        <header class="text-center mb-8 flex-shrink-0 bangkok-theme overflow-hidden">
+            <div class="header-gradient py-6 px-4">
+                <div class="flex justify-center mb-2">
+                    <div class="bg-white bg-opacity-30 p-3 rounded-full">
+                        <i class="fas fa-umbrella-beach text-white text-3xl"></i>
+                    </div>
+                </div>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 header-title" style="font-family: 'Pacifico', cursive;">
+                    2025 BKK 曼谷<br>Chill 之旅 🇹🇭
+                </h1>
+            </div>
+            
+            <div class="p-6">
+                <div class="flex flex-wrap justify-center gap-4 mb-6">
+                    <div class="flex items-center bg-amber-50 px-4 py-2 rounded-full">
+                        <i class="fas fa-users text-amber-600 mr-2"></i>
+                        <span>隨心漫遊</span>
+                    </div>
+                    <div class="flex items-center bg-amber-50 px-4 py-2 rounded-full">
+                        <i class="fas fa-child text-amber-600 mr-2"></i>
+                        <span>返老還童</span>
+                    </div>
+                    <div class="flex items-center bg-amber-50 px-4 py-2 rounded-full">
+                        <i class="fas fa-utensils text-amber-600 mr-2"></i>
+                        <span>美食探索 🍜</span>
+                    </div>
+                    <div class="flex items-center bg-amber-50 px-4 py-2 rounded-full">
+                        <i class="fas fa-building text-amber-600 mr-2"></i>
+                        <span>城市探索 🏙️</span>
+                    </div>
+                    <div class="flex items-center bg-amber-50 px-4 py-2 rounded-full">
+                        <i class="fas fa-spa text-amber-600 mr-2"></i>
+                        <span>舒壓按摩 💆‍♀️</span>
+                    </div>
+                    <div class="flex items-center bg-amber-50 px-4 py-2 rounded-full">
+                        <i class="fas fa-shopping-basket text-amber-600 mr-2"></i>
+                        <span>血拼購物 🛍️</span>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                        <div class="text-2xl text-amber-600 font-bold">9</div>
+                        <div class="text-sm text-gray-600">精彩天數 📆</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                        <div class="text-2xl text-amber-600 font-bold">15+</div>
+                        <div class="text-sm text-gray-600">精選景點 📍</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                        <div class="text-2xl text-amber-600 font-bold">10+</div>
+                        <div class="text-sm text-gray-600">美食推薦 😋</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-lg shadow-sm">
+                        <div class="text-2xl text-amber-600 font-bold">5</div>
+                        <div class="text-sm text-gray-600">住宿選擇 🏨</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Info Bar -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <!-- 天氣卡片 -->
+            <div class="weather-card info-card active">
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-500 p-5 flex items-center info-card-header rounded-t-xl">
+                    <div class="text-4xl mr-4 text-white">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-sm text-white opacity-90">曼谷天氣 ☀️</div>
+                        <div class="text-xl font-bold text-white">28°C - 34°C</div>
+                        <div class="text-sm text-white opacity-90">部分多雲，午後陣雨 🌧️</div>
+                    </div>
+                    <div class="expand-icon text-white">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="info-card-content bg-blue-50 rounded-b-xl">
+                    <div class="text-sm text-gray-700">
+                        <p class="mb-2"><i class="fas fa-temperature-high text-blue-500 mr-2"></i> 10月平均溫度: 25°C - 32°C</p>
+                        <p class="mb-2"><i class="fas fa-umbrella text-blue-500 mr-2"></i> 降雨機率: 40% (建議攜帶輕便雨具)</p>
+                        <p><i class="fas fa-wind text-blue-500 mr-2"></i> 濕度: 75% (較為悶熱)</p>
+                    </div>
+                    <div class="mt-3">
+                        <h4 class="font-semibold text-blue-600 mb-1">穿著建議 👕</h4>
+                        <ul class="text-sm text-gray-600 pl-5 list-disc">
+                            <li>輕便透氣的棉麻衣物</li>
+                            <li>舒適的步行鞋或涼鞋</li>
+                            <li>攜帶防曬用品和帽子</li>
+                            <li>準備一件薄外套應對室內冷氣</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 匯率卡片 -->
+            <div class="currency-card info-card">
+                <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-5 flex items-center info-card-header rounded-t-xl">
+                    <div class="text-4xl mr-4 text-white">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-sm text-white opacity-90">匯率 (THB/TWD) 💰</div>
+                        <div class="text-xl font-bold text-white">1.12</div>
+                        <div class="text-sm text-white opacity-90">更新: 2025-07-25</div>
+                    </div>
+                    <div class="expand-icon text-white">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="info-card-content bg-green-50 rounded-b-xl">
+                    <div class="text-sm text-gray-700">
+                        <p class="mb-2"><i class="fas fa-exchange-alt text-green-500 mr-2"></i> 建議兌換地點: SuperRich 綠色標誌</p>
+                        <p class="mb-2"><i class="fas fa-money-check-alt text-green-500 mr-2"></i> 每日預算: 約 1,500-2,500 泰銖/人</p>
+                        <p><i class="fas fa-credit-card text-green-500 mr-2"></i> 信用卡接受度: 主要商場和餐廳</p>
+                    </div>
+                    <div class="mt-3">
+                        <h4 class="font-semibold text-green-600 mb-1">換匯建議 💡</h4>
+                        <ul class="text-sm text-gray-600 pl-5 list-disc">
+                            <li>機場匯率較差，建議先換少量</li>
+                            <li>市區換匯所匯率較佳 (如SuperRich)</li>
+                            <li>攜帶台幣或美元現金兌換</li>
+                            <li>準備小面額紙幣支付小費</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 緊急聯絡卡片 -->
+            <div class="emergency-card info-card">
+                <div class="bg-gradient-to-br from-orange-500 to-red-500 p-5 flex items-center info-card-header rounded-t-xl">
+                    <div class="text-4xl mr-4 text-white">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-sm text-white opacity-90">緊急聯繫 📞</div>
+                        <div class="text-xl font-bold text-white">1155</div>
+                        <div class="text-sm text-white opacity-90">泰國觀光警察 👮‍♀️</div>
+                    </div>
+                    <div class="expand-icon text-white">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="info-card-content bg-orange-50 rounded-b-xl">
+                    <div class="text-sm text-gray-700">
+                        <p class="mb-2"><i class="fas fa-ambulance text-orange-500 mr-2"></i> 救護車: 1669</p>
+                        <p class="mb-2"><i class="fas fa-shield-alt text-orange-500 mr-2"></i> 警察: 191</p>
+                        <p><i class="fas fa-fire-extinguisher text-orange-500 mr-2"></i> 消防: 199</p>
+                    </div>
+                    <div class="mt-3">
+                        <h4 class="font-semibold text-orange-600 mb-1">重要聯絡資訊 📋</h4>
+                        <ul class="text-sm text-gray-600 pl-5 list-disc">
+                            <li>駐泰國台北經濟文化辦事處: +66-2-119-3555</li>
+                            <li>旅遊保險緊急聯絡: (請參考保單資訊)</li>
+                            <li>飯店聯絡電話: (入住後確認)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 行程總覽頁面內容 -->
+    <div id="itinerary-page" class="page-content hidden">
+        <main class="flex-grow mb-8 bangkok-theme p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 section-title">行程總覽 🗓️</h2>
+            
+            <!-- Itinerary Navigation (Macaron Colors) -->
+            <div class="flex overflow-x-auto pb-4 mb-6 gap-2 text-center">
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#E0BBE4] text-[#836098] rounded-full font-medium active-plan-filter" data-filter="all">全部行程</button>
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#FFC7C7] text-[#CC7070] rounded-full font-medium" data-filter="culture">文化探索 🏛️</button>
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#B3E0FF] text-[#558DBF] rounded-full font-medium" data-filter="food">美食之旅 😋</button>
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#CCE5CC] text-[#6A996A] rounded-full font-medium" data-filter="family">親子景點 👨‍👩‍👧‍👦</button>
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#FFFFB3] text-[#B3B300] rounded-full font-medium" data-filter="shopping">購物熱點 🛍️</button>
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#B5EAD7] text-[#5B8C78] rounded-full font-medium" data-filter="relax">放鬆體驗 💆</button>
+                <button class="plan-nav-btn flex-shrink-0 px-4 py-2 bg-[#FDD9B5] text-[#D47B00] rounded-full font-medium" data-filter="art">藝術巡禮 🎨</button>
+            </div>
+            
+            <!-- Itinerary Days -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Day 1 -->
+                <div class="day-card info-card" data-tags="culture food relax family">
+                    <div class="info-card-header bg-gradient-to-r from-[#FFDAB9] to-[#FFA07A] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 1 抵達曼谷 ✈️</h3>
+                            <div class="text-sm mt-1">10月4日 星期六</div>
+                            <div class="text-gray-700 text-sm mt-1">初抵曼谷，悠閒啟程 🧡</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-amber-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag culture-tag">文化</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag relax-tag">放鬆</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-amber-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A1">PLAN A 大人味 🍷</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B1">PLAN B 返老還童 🎠</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A1">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-plane-departure text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">BR067 台北(08:00) → 曼谷(11:00)</div>
+                                        <div class="text-xs text-gray-500 mt-1">飛行時間約3.5小時，長榮航空</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-hotel text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">飯店入住 & 休憩</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦住宿: W Bangkok Hotel (時尚設計酒店)</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Gaggan Anand (分子料理，米其林星級)</div>
+                                        <div class="text-xs text-gray-500 mt-1">需提前數月預約，體驗獨特泰式風味</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-wine-glass text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">高空酒吧: Vertigo & Moon Bar</div>
+                                        <div class="text-xs text-gray-500 mt-1">俯瞰曼谷璀璨夜景，享受調酒</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B1">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-plane-departure text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">BR067 台北(08:00) → 曼谷(11:00)</div>
+                                        <div class="text-xs text-gray-500 mt-1">飛行時間約3.5小時，長榮航空</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-hotel text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">飯店入住 & 休息</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦住宿: Avani+ Riverside Bangkok Hotel (河畔景觀，附設泳池)</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Supanniga Eating Room</div>
+                                        <div class="text-xs text-gray-500 mt-1">米其林推薦泰式料理，需提前預約</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-grin-beam text-amber-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">兒童遊樂園或親子咖啡廳 🎡</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦: 例如 KidZania Bangkok (職業體驗)</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>抵達機場後，確認手機網路暢通。</li>
+                                <li>前往飯店可選擇機場快線轉計程車，或直接搭乘計程車。</li>
+                                <li>提早預約米其林餐廳，以免向隅。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-amber-200">
+                            <button class="text-amber-600 hover:text-amber-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/KidZania+Bangkok" target="_blank" class="text-amber-600 hover:text-amber-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 2 -->
+                <div class="day-card info-card" data-tags="shopping food culture family">
+                    <div class="info-card-header bg-gradient-to-r from-[#D4EDDA] to-[#A8E6CF] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 2 週末市集 & 暹羅活力 🛍️</h3>
+                            <div class="text-sm mt-1">10月5日 星期日</div>
+                            <div class="text-gray-700 text-sm mt-1">週末市集，活力暹羅 💚</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-orange-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag shopping-tag">購物</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag culture-tag">文化</span>
+                            <span class="tag family-tag">親子</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-orange-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A2">PLAN A 大人味 🍸</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B2">PLAN B 返老還童 🐠</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A2">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-bag text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">The Commons (時尚文創社區)</div>
+                                        <div class="text-xs text-gray-500 mt-1">集結特色小店、咖啡廳與餐廳</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-cocktail text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Thonglor區酒吧巡禮</div>
+                                        <div class="text-xs text-gray-500 mt-1">體驗曼谷夜生活，精選特色酒吧</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Bo.Lan (米其林泰菜)</div>
+                                        <div class="text-xs text-gray-500 mt-1">經典泰國菜新演繹，注重永續</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tshirt text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Siam Paragon & CentralWorld 購物</div>
+                                        <div class="text-xs text-gray-500 mt-1">國際精品與設計品牌</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B2">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-cart text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">恰圖恰週末市集</div>
+                                        <div class="text-xs text-gray-500 mt-1">世界最大週末市集，超過15,000個攤位</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-fish text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Siam Ocean World 水族館</div>
+                                        <div class="text-xs text-gray-500 mt-1">東南亞最大水族館，親子必遊景點</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">午餐: 市集小吃探索</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦: 椰子冰淇淋、芒果糯米飯</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-building text-orange-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Siam Paragon & CentralWorld</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷頂級購物中心，品牌齊全</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>恰圖恰市集範圍廣大，建議穿著舒適鞋子，並注意防曬補水。</li>
+                                <li>水族館門票可事先上網購買，節省排隊時間。</li>
+                                <li>購物時可嘗試議價，但請保持禮貌。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-orange-200">
+                            <button class="text-orange-600 hover:text-orange-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Siam+Paragon" target="_blank" class="text-orange-600 hover:text-orange-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 3 -->
+                <div class="day-card info-card" data-tags="culture nature shopping family">
+                    <div class="info-card-header bg-gradient-to-r from-[#B3E5FC] to-[#A7D9FD] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 3 河畔風情 🚢</h3>
+                            <div class="text-sm mt-1">10月6日 星期一</div>
+                            <div class="text-gray-700 text-sm mt-1">河畔風情，古蹟巡禮 💙</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-blue-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag culture-tag">文化</span>
+                            <span class="tag nature-tag">河畔</span>
+                            <span class="tag shopping-tag">購物</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-blue-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A3">PLAN A 大人味 🎨</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B3">PLAN B 返老還童 🏯</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A3">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-ship text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">昭披耶河畔遊船 (晚餐遊船)</div>
+                                        <div class="text-xs text-gray-500 mt-1">在湄南河上享用晚餐，欣賞兩岸夜景</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-landmark text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">臥佛寺 (Reclining Buddha)</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷最大最古老的寺廟，泰式按摩發源地</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-paint-brush text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">河畔畫廊與文創空間</div>
+                                        <div class="text-xs text-gray-500 mt-1">探索隱藏在巷弄間的藝術小店</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-cocktail text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Asiatique 碼頭夜市酒吧區</div>
+                                        <div class="text-xs text-gray-500 mt-1">在河畔酒吧小酌，感受悠閒夜晚</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B3">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-landmark text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">大皇宮 & 玉佛寺</div>
+                                        <div class="text-xs text-gray-500 mt-1">泰國最重要文化遺產，著裝需端莊</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-torii-gate text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">鄭王廟 (黎明寺)</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷標誌性建築，拍照絕佳地點</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">午餐: The Deck河畔餐廳</div>
+                                        <div class="text-xs text-gray-500 mt-1">欣賞鄭王廟美景的景觀餐廳</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-bag text-blue-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Asiatique碼頭夜市</div>
+                                        <div class="text-xs text-gray-500 mt-1">河畔夜市，有摩天輪和表演</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>參觀大皇宮與寺廟時，請務必穿著遮蓋肩膀與膝蓋的服裝。</li>
+                                <li>搭乘昭披耶河交通船可方便抵達各景點。</li>
+                                <li>Asiatique夜市晚間人潮眾多，請留意隨身物品。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-blue-200">
+                            <button class="text-blue-600 hover:text-blue-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Asiatique+The+Riverfront" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 4 -->
+                <div class="day-card info-card" data-tags="shopping food relax family">
+                    <div class="info-card-header bg-gradient-to-r from-[#FFFACD] to-[#FFEECF] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 4 時尚購物 & 城市脈動 🛍️</h3>
+                            <div class="text-sm mt-1">10月7日 星期二</div>
+                            <div class="text-gray-700 text-sm mt-1">時尚購物，城市脈動 💛</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-purple-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag shopping-tag">購物</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag relax-tag">放鬆</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-purple-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A4">PLAN A 大人味 💅</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B4">PLAN B 返老還童 💦</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A4">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-bag text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">EmQuartier & Emporium (高檔百貨)</div>
+                                        <div class="text-xs text-gray-500 mt-1">盡情享受奢華購物體驗</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-spa text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Oasis Spa (高級水療中心)</div>
+                                        <div class="text-xs text-gray-500 mt-1">享受頂級按摩和身心放鬆</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Paste Bangkok (米其林星級泰菜)</div>
+                                        <div class="text-xs text-gray-500 mt-1">精緻創意泰國菜，藝術般的擺盤</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-cocktail text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Red Sky高空酒吧</div>
+                                        <div class="text-xs text-gray-500 mt-1">360度城市景觀，適合欣賞夜景</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B4">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-bag text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Iconsiam購物中心</div>
+                                        <div class="text-xs text-gray-500 mt-1">奢華購物中心，室內水上市場</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tshirt text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">水門市場挖寶</div>
+                                        <div class="text-xs text-gray-500 mt-1">服飾批發天堂，價格實惠</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: 水門雞飯</div>
+                                        <div class="text-xs text-gray-500 mt-1">當地人氣美食，米其林推薦</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-cocktail text-purple-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Iconsiam 水舞秀</div>
+                                        <div class="text-xs text-gray-500 mt-1">傍晚定時演出，聲光效果十足</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>搭乘BTS或Grab是前往購物中心的好選擇，可避開交通堵塞。</li>
+                                <li>高空酒吧通常有服裝要求，請避免短褲、拖鞋。</li>
+                                <li>水門市場商品眾多，可多方比較後再購買。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-purple-200">
+                            <button class="text-purple-600 hover:text-purple-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Red+Sky+Bar+Bangkok" target="_blank" class="text-purple-600 hover:text-purple-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 5 -->
+                <div class="day-card info-card" data-tags="culture nature food family">
+                    <div class="info-card-header bg-gradient-to-r from-[#E6E6FA] to-[#D8BFD8] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 5 古都風華 🏛️</h3>
+                            <div class="text-sm mt-1">10月8日 星期三</div>
+                            <div class="text-gray-700 text-sm mt-1">古都風華，歷史探秘 💜</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-green-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag culture-tag">文化</span>
+                            <span class="tag nature-tag">古城</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-green-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A5">PLAN A 大人味 🛵</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B5">PLAN B 返老還童 🚌</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A5">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-motorcycle text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">大城歷史公園自行車之旅</div>
+                                        <div class="text-xs text-gray-500 mt-1">租借自行車，深度探索古蹟群</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-camera-retro text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">邦芭茵夏宮 (Bang Pa-In Royal Palace)</div>
+                                        <div class="text-xs text-gray-500 mt-1">泰國皇帝的夏日行宮，結合泰中西式建築</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">午餐: Grande Centre Point Terminal 21 (自助餐)</div>
+                                        <div class="text-xs text-gray-500 mt-1">多國料理自助餐，選擇豐富</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-beer text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">考山路 (Khao San Road)</div>
+                                        <div class="text-xs text-gray-500 mt-1">體驗背包客天堂的熱鬧氛圍，品嚐街頭小吃、酒吧</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B5">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-bus text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">大城歷史公園一日遊 (包車)</div>
+                                        <div class="text-xs text-gray-500 mt-1">世界文化遺產，古都遺跡探索</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tree text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">瑪哈泰寺樹中佛頭</div>
+                                        <div class="text-xs text-gray-500 mt-1">著名景點，佛像頭被樹根環繞</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">午餐: 大城特色料理</div>
+                                        <div class="text-xs text-gray-500 mt-1">當地河蝦和傳統菜餚</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-crab text-teal-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: 建興酒家咖哩蟹</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷必吃美食，招牌咖哩螃蟹</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>大城距離曼谷較遠，建議提早出發，包車或參加一日遊會更方便。</li>
+                                <li>大城古蹟區較為空曠，請注意防曬。</li>
+                                <li>晚上回到曼谷後，可選擇放鬆的活動。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-green-200">
+                            <button class="text-teal-600 hover:text-teal-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Somboon+Seafood+Surawong" target="_blank" class="text-teal-600 hover:text-teal-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Day 6 -->
+                <div class="day-card info-card" data-tags="culture food art family">
+                    <div class="info-card-header bg-gradient-to-r from-[#F8BBD0] to-[#F48FB1] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 6 童趣樂園 & 藝術巡禮 🎨</h3>
+                            <div class="text-sm mt-1">10月9日 星期四</div>
+                            <div class="text-gray-700 text-sm mt-1">童趣樂園，藝術巡禮 💖</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-pink-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag culture-tag">親子</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag art-tag">藝術</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-pink-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A6">PLAN A 大人味 ☕</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B6">PLAN B 返老還童 🎠</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A6">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-book-open text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">曼谷圖書館 & 文青咖啡店</div>
+                                        <div class="text-xs text-gray-500 mt-1">享受閱讀時光，體驗當地文青氛圍</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-paint-brush text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">曼谷藝術文化中心</div>
+                                        <div class="text-xs text-gray-500 mt-1">當代藝術展覽，免費參觀</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Jao Chuem Grilled Fish (烤魚特色餐廳)</div>
+                                        <div class="text-xs text-gray-500 mt-1">當地人推薦的炭烤羅非魚，風味獨特</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-spa text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">足部按摩 & 舒緩放鬆</div>
+                                        <div class="text-xs text-gray-500 mt-1">逛街後舒緩雙腳疲勞</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B6">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-ice-cream text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Chocolate Ville童話小鎮</div>
+                                        <div class="text-xs text-gray-500 mt-1">歐式主題餐廳，適合拍照</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-palette text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">曼谷藝術文化中心 (兒童創意區)</div>
+                                        <div class="text-xs text-gray-500 mt-1">適合兒童參與的藝術工作坊</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Greyhound Cafe</div>
+                                        <div class="text-xs text-gray-500 mt-1">時尚泰式料理，創意菜單</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-gamepad text-pink-500 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">兒童室內樂園或互動體驗 🤸</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦: 例如 HarborLand Mega Bangna (大型室內遊樂場)</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>Chocolate Ville較遠，建議搭乘計程車或包車前往。</li>
+                                <li>曼谷藝術文化中心常常有不同的展覽，可事先查詢。</li>
+                                <li>下午可安排午茶時間，享受悠閒。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-pink-200">
+                            <button class="text-pink-600 hover:text-pink-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/HarborLand+Mega+Bangna" target="_blank" class="text-pink-600 hover:text-pink-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 7 -->
+                <div class="day-card info-card" data-tags="culture food nature family">
+                    <div class="info-card-header bg-gradient-to-r from-[#FFDAB9] to-[#FFCC99] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 7 水上市場 & 鐵道奇觀 🚂</h3>
+                            <div class="text-sm mt-1">10月10日 星期五</div>
+                            <div class="text-gray-700 text-sm mt-1">水上市場，鐵道奇觀 🧡</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-yellow-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag culture-tag">文化</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag nature-tag">戶外</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-yellow-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A7">PLAN A 大人味 🛶</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B7">PLAN B 返老還童 🥭</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A7">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-ship text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">安帕瓦水上市場 (Amphawa Floating Market)</div>
+                                        <div class="text-xs text-gray-500 mt-1">更具當地風情，傍晚可搭船賞螢火蟲</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-train text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">美功鐵道市場 (Maeklong Railway Market)</div>
+                                        <div class="text-xs text-gray-500 mt-1">近距離觀看火車穿越市場的奇景</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">午餐: 水上市場海鮮燒烤</div>
+                                        <div class="text-xs text-gray-500 mt-1">品嚐新鮮河鮮料理</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-mug-hot text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">特色咖啡廳尋訪</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷各區隱藏的獨特咖啡空間</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B7">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-ship text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">丹嫩莎朵水上市場</div>
+                                        <div class="text-xs text-gray-500 mt-1">體驗傳統水上生活與購物樂趣</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-train text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">美功鐵道市場</div>
+                                        <div class="text-xs text-gray-500 mt-1">火車穿梭市場的獨特景象</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">午餐: 水上市場特色小吃</div>
+                                        <div class="text-xs text-gray-500 mt-1">品嚐船麵、烤香蕉等當地美食</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-mug-hot text-yellow-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">網紅咖啡廳打卡</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷特色咖啡廳，享受悠閒時光</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>水上市場和鐵道市場通常會安排在一日遊行程中，包車較方便。</li>
+                                <li>火車進站時間需提前確認，以免錯過美功鐵道市場的奇觀。</li>
+                                <li>水上市場炎熱潮濕，請多補充水分。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-yellow-200">
+                            <button class="text-yellow-600 hover:text-yellow-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Damnoen+Saduak+Floating+Market" target="_blank" class="text-yellow-600 hover:text-yellow-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 8 -->
+                <div class="day-card info-card" data-tags="relax food shopping family">
+                    <div class="info-card-header bg-gradient-to-r from-[#AFEEEE] to-[#81D8D0] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 8 悠閒放鬆 & 美食饗宴 🍹</h3>
+                            <div class="text-sm mt-1">10月11日 星期六</div>
+                            <div class="text-gray-700 text-sm mt-1">悠閒放鬆，美食饗宴 💚</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-lime-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag relax-tag">放鬆</span>
+                            <span class="tag food-tag">美食</span>
+                            <span class="tag shopping-tag">購物</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-lime-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A8">PLAN A 大人味 🥂</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B8">PLAN B 返老還童 👨‍🍳</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A8">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-bag text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Terminal 21 Asok (主題式購物中心)</div>
+                                        <div class="text-xs text-gray-500 mt-1">每個樓層不同城市主題，可輕鬆購物</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-hand-holding-heart text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Divana Scentuara Spa (奢華SPA體驗)</div>
+                                        <div class="text-xs text-gray-500 mt-1">頂級水療服務，享受身心靈放鬆</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: Blue Elephant (米其林泰國菜)</div>
+                                        <div class="text-xs text-gray-500 mt-1">皇室等級的泰國料理，環境高雅</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-cocktail text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Char Rooftop Bar (高空酒吧)</div>
+                                        <div class="text-xs text-gray-500 mt-1">曼谷另一家景觀絕佳的高空酒吧</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B8">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-basket text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">Big C 大採購</div>
+                                        <div class="text-xs text-gray-500 mt-1">購買伴手禮和零食的最佳地點</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-mortar-pestle text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">泰國烹飪課程 (親子同樂) 👨‍🍳</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦: 例如 Blue Elephant Cooking School (有親子課程)</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-utensils text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">晚餐: 家庭友善米其林推薦餐廳</div>
+                                        <div class="text-xs text-gray-500 mt-1">品嚐精緻泰國菜，為旅程畫上完美句點</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-ticket-alt text-lime-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">親子晚餐秀或大型商場娛樂 🎭</div>
+                                        <div class="text-xs text-gray-500 mt-1">推薦: 例如 Calypso Cabaret (人妖秀，部分場次適合家庭觀看)</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>Big C適合集中採購，建議預留充足時間。</li>
+                                <li>高級SPA通常需要預約，特別是週末。</li>
+                                <li>享用米其林餐廳時，請預先確認是否接受兒童。</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-lime-200">
+                            <button class="text-lime-600 hover:text-lime-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Big+C+Supercenter+Ratchadamri" target="_blank" class="text-lime-600 hover:text-lime-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 9 -->
+                <div class="day-card info-card" data-tags="relax shopping family">
+                    <div class="info-card-header bg-gradient-to-r from-[#F0F0F0] to-[#E0E0E0] p-4 text-gray-800 rounded-t-xl">
+                        <div>
+                            <h3 class="text-xl font-bold">DAY 9 珍重再見 👋</h3>
+                            <div class="text-sm mt-1">10月12日 星期日</div>
+                            <div class="text-gray-700 text-sm mt-1">珍重再見，滿載而歸 🇹🇭❤️</div>
+                        </div>
+                        <div class="expand-icon text-gray-800">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="info-card-content bg-gray-50 p-4 rounded-b-xl">
+                        <div class="flex flex-wrap gap-1 mb-3">
+                            <span class="tag relax-tag">放鬆</span>
+                            <span class="tag shopping-tag">購物</span>
+                            <span class="tag family-tag">家庭</span>
+                        </div>
+                        <div class="plan-toggle flex justify-around mb-4 border-b pb-2 border-gray-200">
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700 active" data-plan="A9">PLAN A 大人味 ✈️</button>
+                            <button class="plan-btn px-4 py-2 rounded-full text-sm font-semibold text-gray-700" data-plan="B9">PLAN B 返老還童 🛍️</button>
+                        </div>
+
+                        <!-- PLAN A: 大人味 -->
+                        <div class="plan-content active" data-plan-id="A9">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-hotel text-gray-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">飯店退房 & 悠閒早午餐</div>
+                                        <div class="text-xs text-gray-500 mt-1">在飯店享用精緻早午餐後退房</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-wine-bottle text-gray-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">機場免稅店精品採購</div>
+                                        <div class="text-xs text-gray-500 mt-1">為自己或親友選購免稅商品</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plane-arrival text-gray-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">BR068 曼谷(12:00) → 台北(16:50)</div>
+                                        <div class="text-xs text-gray-500 mt-1">結束愉快的曼谷旅程</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- PLAN B: 返老還童 -->
+                        <div class="plan-content" data-plan-id="B9">
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-hotel text-gray-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">飯店退房</div>
+                                        <div class="text-xs text-gray-500 mt-1">確認行李無遺漏</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-shopping-bag text-gray-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">機場免稅店最後採購</div>
+                                        <div class="text-xs text-gray-500 mt-1">為親友帶回更多紀念品</div>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-plane-arrival text-gray-600 mt-1 mr-2"></i>
+                                    <div>
+                                        <div class="font-medium">BR068 曼谷(12:00) → 台北(16:50)</div>
+                                        <div class="text-xs text-gray-500 mt-1">結束愉快的曼谷旅程</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="daily-reminders">
+                            <strong>本日提醒事項:</strong>
+                            <ul>
+                                <li>務必確認所有行李都已打包妥當，並檢查護照、機票等重要文件。</li>
+                                <li>提早抵達機場，預留充裕時間辦理登機手續和逛免稅店。</li>
+                                <li>留下美好的回憶，期待下次再訪曼谷！</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4 flex justify-between border-t pt-3 border-gray-200">
+                            <button class="text-gray-600 hover:text-gray-800 text-sm">
+                                <i class="far fa-heart mr-1"></i> 收藏
+                            </button>
+                            <a href="https://www.google.com/maps/search/Suvarnabhumi+Airport" target="_blank" class="text-gray-600 hover:text-gray-800 text-sm">
+                                地圖導航 <i class="fas fa-map-marker-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Travel Tips -->
+            <div class="mt-10">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 section-title">貼心小叮嚀 💡</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <div class="text-amber-500 text-2xl mb-3">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">簽證與文件 📄</h3>
+                        <p class="text-gray-600 text-sm">台灣護照入境泰國免簽證，請確保護照有效期6個月以上。</p>
+                        <p class="text-gray-600 text-sm mt-2">
+                            <a href="https://tdac.immigration.go.th/arrival-card/#/home" target="_blank" class="text-blue-600 hover:text-blue-800 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1 text-sm"></i> 泰國線上入境卡申請
+                            </a>
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <div class="text-amber-500 text-2xl mb-3">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">貨幣與消費 💰</h3>
+                        <p class="text-gray-600 text-sm">泰銖(THB)為主要貨幣，建議使用SuperRich換匯所匯率最佳</p>
+                    </div>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <div class="text-amber-500 text-2xl mb-3">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">衣著建議 👚</h3>
+                        <p class="text-gray-600 text-sm">輕便透氣棉麻衣物，參觀寺廟需著過膝褲/裙及有袖上衣</p>
+                    </div>
+                    
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <div class="text-amber-500 text-2xl mb-3">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">語言溝通 🗣️</h3>
+                        <p class="text-gray-600 text-sm">學習簡單泰語問候，觀光區英語可通，下載翻譯APP備用</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 推薦頁面內容 -->
+    <div id="services-page" class="page-content hidden">
+        <main class="flex-grow mb-8 bangkok-theme p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 section-title">推薦 🛎️</h2>
+            
+            <!-- 推薦餐廳 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-utensils text-amber-500 mr-2"></i> 推薦餐廳 🍽️</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Supanniga Eating Room</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 米其林推薦的傳統泰式料理，味道正宗且環境優雅，適合家庭聚餐。</p>
+                        <a href="https://www.google.com/maps/search/Supanniga+Eating+Room" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">建興酒家 (Somboon Seafood)</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 曼谷必吃咖哩螃蟹的創始店，海鮮新鮮，口味獨特，人氣超高。</p>
+                        <a href="https://www.google.com/maps/search/Somboon+Seafood" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">水門雞飯 (Go-Ang Kaomunkai Pratunam)</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 米其林必比登推薦的平價美食，雞肉鮮嫩，米飯香氣十足，CP值高。</p>
+                        <a href="https://www.google.com/maps/search/Go-Ang+Kaomunkai+Pratunam" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推薦住宿 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-hotel text-amber-500 mr-2"></i> 推薦住宿 🏨</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Avani+ Riverside Bangkok Hotel</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 坐擁湄南河絕美景觀，頂樓有無邊際泳池，適合親子與注重景色的旅客。</p>
+                        <a href="https://www.google.com/maps/search/Avani+Riverside+Bangkok+Hotel" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">W Bangkok Hotel</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 時尚設計感十足的酒店，位於鬧區，交通便利，適合追求潮流的旅客。</p>
+                        <a href="https://www.google.com/maps/search/W+Bangkok+Hotel" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Grande Centre Point Terminal 21</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 交通便利，直接連結BTS，房間寬敞，設施齊全，適合家庭住宿。</p>
+                        <a href="https://www.google.com/maps/search/Grande+Centre+Point+Terminal+21" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                     <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Hotel Nikko Bangkok</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 日系風格酒店，服務細緻，位於Thonglor區，周邊有許多日式餐廳和酒吧。</p>
+                        <a href="https://www.google.com/maps/search/Hotel+Nikko+Bangkok" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Carlton Hotel Bangkok Sukhumvit</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 新穎的五星級酒店，設計現代，擁有屋頂泳池，性價比高。</p>
+                        <a href="https://www.google.com/maps/search/Carlton+Hotel+Bangkok+Sukhumvit" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推薦景點 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-camera-retro text-amber-500 mr-2"></i> 推薦景點 📸</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">大皇宮 & 玉佛寺</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 泰國最重要的地標，金碧輝煌的建築群展現泰國皇室的莊嚴與藝術。</p>
+                        <a href="https://www.google.com/maps/search/Grand+Palace+Bangkok" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Iconsiam 購物中心</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 結合奢華購物、美食、文化與藝術的複合式商場，還有室內水上市場。</p>
+                        <a href="https://www.google.com/maps/search/Iconsiam" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Asiatique 碼頭夜市</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 河畔的開放式夜市，結合購物、餐飲和娛樂，還有大型摩天輪可搭乘。</p>
+                        <a href="https://www.google.com/maps/search/Asiatique+The+Riverfront" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 推薦按摩 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-spa text-amber-500 mr-2"></i> 推薦按摩 💆‍♀️</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Health Land Spa & Massage</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 曼谷連鎖按摩店，環境舒適，價格合理，服務專業，CP值高。</p>
+                        <a href="https://www.google.com/maps/search/Health+Land+Spa+%26+Massage" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Let's Relax Spa</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 曼谷知名的中高價位按摩品牌，提供多種療程，環境精緻，適合享受。</p>
+                        <a href="https://www.google.com/maps/search/Let's+Relax+Spa" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 親子友善 -->
+            <div>
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-child text-amber-500 mr-2"></i> 親子友善 👨‍👩‍👧‍👦</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Siam Ocean World 水族館</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 東南亞最大的水族館，擁有豐富的海洋生物，還有海底隧道，孩子們的最愛。</p>
+                        <a href="https://www.google.com/maps/search/Siam+Ocean+World" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">KidZania Bangkok</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 兒童職業體驗樂園，讓孩子們在玩樂中學習不同職業，寓教於樂。</p>
+                        <a href="https://www.google.com/maps/search/KidZania+Bangkok" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">Chocolate Ville 童話小鎮</h4>
+                        <p class="text-gray-600 text-sm mb-2">推薦原因: 歐式風格的戶外餐廳與拍照景點，有許多可愛的造景，適合全家大小同樂。</p>
+                        <a href="https://www.google.com/maps/search/Chocolate+Ville" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm flex items-center">
+                            <i class="fas fa-map-marker-alt mr-1"></i> 查看地圖
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 我的頁面內容 -->
+    <div id="my-page" class="page-content hidden">
+        <main class="flex-grow mb-8 bangkok-theme p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 section-title">我的清單 📋</h2>
+            
+            <!-- 伴手禮清單 -->
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-gifts text-amber-500 mr-2"></i> 伴手禮清單 🎁</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 item-list">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">食品類 🍜</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 泰國泡麵 (MAMA麵、YumYum麵)<span class="location">推薦地點: Big C、各大超市、7-11</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 泰式奶茶包 (手標牌)<span class="location">推薦地點: Big C、各大超市、手標奶茶店</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 芒果乾、榴槤乾<span class="location">推薦地點: 各大夜市、超市、Big C</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 小老闆海苔<span class="location">推薦地點: Big C、各大超市、7-11</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 皇家牌牛奶片<span class="location">推薦地點: 7-11、各大超市</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">美妝/藥品類 🧴</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 臥佛牌青草藥膏<span class="location">推薦地點: 藥妝店 (如Boots, Watsons)、Big C</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 虎標萬金油<span class="location">推薦地點: 藥妝店、超市</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 蛇牌爽身粉<span class="location">推薦地點: 藥妝店、Big C、超市</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> Snail White 蝸牛霜<span class="location">推薦地點: Boots、屈臣氏、藥妝店</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> Mistine 彩妝品<span class="location">推薦地點: 藥妝店、美妝專賣店</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">生活小物類 🛍️</h4>
+                        <ul>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 泰國香氛產品 (擴香、精油)<span class="location">推薦地點: 恰圖恰市集、百貨公司、水門市場</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 大象圖案周邊商品 (包包、衣服)<span class="location">推薦地點: 恰圖恰市集、各大夜市、觀光區</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 泰絲製品<span class="location">推薦地點: Jim Thompson、百貨公司、恰圖恰市集</span></li>
+                            <li><i class="fas fa-check-circle text-green-500"></i> 手工皂<span class="location">推薦地點: 恰圖恰市集、夜市、藥妝店</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 必帶物品清單 -->
+            <div>
+                <h3 class="text-xl font-bold text-gray-700 mb-4 flex items-center"><i class="fas fa-suitcase-rolling text-amber-500 mr-2"></i> 必帶物品清單 🎒</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 item-list">
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">個人文件與金錢 💳</h4>
+                        <ul>
+                            <li><i class="fas fa-file-alt text-blue-500"></i> 護照、簽證 (若需要)</li>
+                            <li><i class="fas fa-money-bill-wave text-blue-500"></i> 泰銖現金、信用卡</li>
+                            <li><i class="fas fa-ticket-alt text-blue-500"></i> 機票、飯店預訂單</li>
+                            <li><i class="fas fa-id-card text-blue-500"></i> 身份證影本 (備用)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">衣物與鞋子 👕</h4>
+                        <ul>
+                            <li><i class="fas fa-tshirt text-blue-500"></i> 夏季輕便衣物 (棉麻材質佳)</li>
+                            <li><i class="fas fa-umbrella text-blue-500"></i> 薄外套 (室內冷氣、早晚溫差)</li>
+                            <li><i class="fas fa-shoe-prints text-blue-500"></i> 舒適好走的鞋子、涼鞋</li>
+                            <li><i class="fas fa-swimmer text-blue-500"></i> 泳衣 (若飯店有泳池)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">個人用品與藥品 💊</h4>
+                        <ul>
+                            <li><i class="fas fa-sun text-blue-500"></i> 防曬乳、帽子、太陽眼鏡</li>
+                            <li><i class="fas fa-bug text-blue-500"></i> 防蚊液</li>
+                            <li><i class="fas fa-first-aid text-blue-500"></i> 個人常備藥品 (腸胃藥、感冒藥)</li>
+                            <li><i class="fas fa-brush text-blue-500"></i> 牙刷、牙膏、洗髮精等盥洗用品</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl shadow-sm">
+                        <h4 class="font-semibold text-lg mb-2">電子產品與其他 📱</h4>
+                        <ul>
+                            <li><i class="fas fa-mobile-alt text-blue-500"></i> 手機、充電器、行動電源</li>
+                            <li><i class="fas fa-plug text-blue-500"></i> 轉接頭 (泰國為兩孔扁插，電壓220V)</li>
+                            <li><i class="fas fa-camera text-blue-500"></i> 相機及記憶卡</li>
+                            <li><i class="fas fa-water text-blue-500"></i> 環保水瓶</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Fixed Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white shadow-lg z-50 p-3 flex justify-center">
+        <div class="flex gap-1 sm:gap-2 max-w-2xl w-full">
+            <button class="nav-btn flex-1 flex flex-col items-center justify-center p-3 rounded-xl active" data-page="home">
+                <i class="fas fa-home text-lg mb-1"></i>
+                <span class="text-xs">首頁</span>
+            </button>
+            
+            <button class="nav-btn flex-1 flex flex-col items-center justify-center bg-white text-gray-700 p-3 rounded-xl" data-page="itinerary">
+                <i class="fas fa-route text-lg mb-1"></i>
+                <span class="text-xs">行程</span>
+            </button>
+            
+            <button class="nav-btn flex-1 flex flex-col items-center justify-center bg-white text-gray-700 p-3 rounded-xl" data-page="services">
+                <i class="fas fa-concierge-bell text-lg mb-1"></i>
+                <span class="text-xs">推薦</span>
+            </button>
+            
+            <button class="nav-btn flex-1 flex flex-col items-center justify-center bg-white text-gray-700 p-3 rounded-xl" data-page="my">
+                <i class="fas fa-user text-lg mb-1"></i>
+                <span class="text-xs">我的</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Floating Action Button -->
+    <div class="fixed right-6 bottom-20 z-50">
+        <button class="floating-btn w-14 h-14 bg-amber-500 text-white rounded-full shadow-lg flex items-center justify-center">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm mt-8 pb-20">
+        <div class="mt-4 flex justify-center gap-4">
+            <a href="#" class="text-amber-600 hover:text-amber-800"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-amber-600 hover:text-amber-800"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-amber-600 hover:text-amber-800"><i class="fab fa-line"></i></a>
+            <a href="#" class="text-amber-600 hover:text-amber-800"><i class="fas fa-phone"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const pageContents = document.querySelectorAll('.page-content');
+            const infoCards = document.querySelectorAll('.info-card');
+            const planNavButtons = document.querySelectorAll('.plan-nav-btn'); // For filtering itinerary
+            
+            // Function to show a specific page
+            function showPage(pageId) {
+                pageContents.forEach(page => page.classList.add('hidden'));
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                }
+            }
+
+            // Update navigation button active state
+            function updateNavButtons(activeButton) {
+                navButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-amber-500', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                });
+                activeButton.classList.add('active', 'bg-amber-500', 'text-white');
+                activeButton.classList.remove('bg-white', 'text-gray-700');
+            }
+
+            // Navigation functionality
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetPageId = this.dataset.page + '-page';
+                    showPage(targetPageId);
+                    updateNavButtons(this);
+                });
+            });
+
+            // Card expand/collapse functionality
+            infoCards.forEach(card => {
+                const header = card.querySelector('.info-card-header');
+                const planButtons = card.querySelectorAll('.plan-btn');
+                const planContents = card.querySelectorAll('.plan-content');
+
+                // Check if the header and planButtons exist to avoid errors on non-itinerary cards
+                if (header) {
+                    header.addEventListener('click', function() {
+                        card.classList.toggle('active');
+                        if (card.classList.contains('active')) {
+                            // Collapse other info cards, but not for day-cards
+                            infoCards.forEach(otherCard => {
+                                if (otherCard !== card && !otherCard.classList.contains('day-card') && otherCard.classList.contains('active')) {
+                                    otherCard.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }
+
+                // Plan A/B toggle for itinerary cards
+                if (planButtons.length > 0) {
+                    planButtons.forEach(btn => {
+                        btn.addEventListener('click', function(e) {
+                            e.stopPropagation(); // Prevent card from collapsing when clicking plan buttons
+                            const planId = this.dataset.plan;
+
+                            planButtons.forEach(pBtn => pBtn.classList.remove('active', 'bg-amber-500', 'text-white'));
+                            planButtons.forEach(pBtn => pBtn.classList.add('bg-gray-200', 'text-gray-700')); // Default grey for inactive
+                            
+                            this.classList.add('active', 'bg-amber-500', 'text-white');
+                            this.classList.remove('bg-gray-200', 'text-gray-700');
+
+                            planContents.forEach(content => {
+                                if (content.dataset.planId === planId) {
+                                    content.classList.add('active');
+                                } else {
+                                    content.classList.remove('active');
+                                }
+                            });
+                        });
+                    });
+                }
+            });
+
+            // Itinerary filtering 
+            planNavButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    planNavButtons.forEach(btn => {
+                        btn.classList.remove('active-plan-filter', 'bg-[#ff6b35]', 'text-white'); // Primary color for active state
+                        // Restore macaron colors for non-active filters
+                        const filterType = btn.dataset.filter;
+                        if (filterType === 'all') btn.classList.add('bg-[#E0BBE4]', 'text-[#836098]');
+                        if (filterType === 'culture') btn.classList.add('bg-[#FFC7C7]', 'text-[#CC7070]');
+                        if (filterType === 'food') btn.classList.add('bg-[#B3E0FF]', 'text-[#558DBF]');
+                        if (filterType === 'family') btn.classList.add('bg-[#CCE5CC]', 'text-[#6A996A]');
+                        if (filterType === 'shopping') btn.classList.add('bg-[#FFFFB3]', 'text-[#B3B300]');
+                        if (filterType === 'relax') btn.classList.add('bg-[#B5EAD7]', 'text-[#5B8C78]');
+                        if (filterType === 'art') btn.classList.add('bg-[#FDD9B5]', 'text-[#D47B00]');
+                    });
+                    this.classList.add('active-plan-filter', 'bg-[#ff6b35]', 'text-white');
+                    // Remove specific macaron color classes when it's the active filter
+                    const filterType = this.dataset.filter;
+                    if (filterType === 'all') this.classList.remove('bg-[#E0BBE4]', 'text-[#836098]');
+                    if (filterType === 'culture') this.classList.remove('bg-[#FFC7C7]', 'text-[#CC7070]');
+                    if (filterType === 'food') this.classList.remove('bg-[#B3E0FF]', 'text-[#558DBF]');
+                    if (filterType === 'family') this.classList.remove('bg-[#CCE5CC]', 'text-[#6A996A]');
+                    if (filterType === 'shopping') this.classList.remove('bg-[#FFFFB3]', 'text-[#B3B300]');
+                    if (filterType === 'relax') this.classList.remove('bg-[#B5EAD7]', 'text-[#5B8C78]');
+                    if (filterType === 'art') this.classList.remove('bg-[#FDD9B5]', 'text-[#D47B00]');
+
+
+                    // Filter logic for day cards
+                    const filterTag = this.dataset.filter;
+                    const dayCards = document.querySelectorAll('.day-card');
+                    dayCards.forEach(card => {
+                        if (filterTag === 'all' || card.dataset.tags.includes(filterTag)) {
+                            card.style.display = 'block'; 
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+
+            // Initial setup: display home page and activate its nav button
+            showPage('home-page');
+            updateNavButtons(document.querySelector('.nav-btn[data-page="home"]'));
+
+            // Set initial state for Plan A/B toggles in day cards
+            infoCards.forEach(card => {
+                if (card.classList.contains('day-card')) {
+                    const firstPlanButton = card.querySelector('.plan-btn[data-plan^="A"]');
+                    const firstPlanContent = card.querySelector('.plan-content[data-plan-id^="A"]');
+                    if (firstPlanButton) {
+                        firstPlanButton.classList.add('active', 'bg-amber-500', 'text-white');
+                        firstPlanButton.classList.remove('bg-gray-200', 'text-gray-700');
+                    }
+                    if (firstPlanContent) {
+                        firstPlanContent.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
